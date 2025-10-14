@@ -22,25 +22,23 @@ $email = $_POST['email'] ?? 'No definido';
 
 $patron = "/^[\w\-\.]+@([\w\-]+\.)+[a-zA-Z]{2,7}$/";
 if (preg_match($patron, $email)) {
-echo "Email válido";
+echo "Email válido ";
 } else {
-echo "Email inválido";
+echo "Email inválido ";
 }
 
-echo $number;
 $patron2 = "/[0-9]{9,15}$/";
-if(preg_match($patron2, $number, $coincidencia)){
-echo "Número válido"; 
-echo $coincidencia[0];
+if(preg_match($patron2, $number)){
+echo "Número válido "; 
 } else {
-echo "Número inválido";
+echo "Número inválido ";
 }
 
 $patron3 = "/^[\w\-\.]{5,20}$/";
 if(preg_match($patron3, $user)){
-echo "Usuario válido";
+echo "Usuario válido ";
 } else {
-echo "Usuario inválido";
+echo "Usuario inválido ";
 }
 
 if(preg_match($patron, $email) && preg_match($patron2, $number) && preg_match($patron3, $user)){
