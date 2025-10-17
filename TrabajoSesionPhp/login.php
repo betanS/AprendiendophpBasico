@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="post">
+    <form action="" method="post">
         <input type="text" name="user">
         <input type="submit" onclick = 'location:bienvenida.php'>
     </form>
