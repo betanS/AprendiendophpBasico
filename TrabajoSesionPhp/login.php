@@ -8,13 +8,14 @@
 <body>
     <form action="" method="post">
         <input type="text" name="user">
-        <input type="submit" onclick = 'location:bienvenida.php'>
+        <input type="submit" onclick= "location:'bienvenida.php'";>
     </form>
 </body>
 </html>
 
 <?php
-session_start();
+session_start();    
 $_SESSION['usuario'] = $_POST['user'];
+if($_SESSION['usuario'] != null){ echo "Usuario en sesión: " . $_SESSION['usuario'];}
 
 ?>
