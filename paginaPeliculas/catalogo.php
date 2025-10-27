@@ -23,6 +23,7 @@
 </html>
 
 <?php
+/*
 $peliculas = [
     [
         "titulo" => "El Señor de los Anillos: La Comunidad del Anillo",
@@ -92,5 +93,60 @@ for ($i=0; $i < count($peliculas); $i++) {
     "<p> " . $peliculas[$i]['anio'] . "</p> <br>". 
     "<p> " . $peliculas[$i]['genero'] . "</p> <br>
     <img src= '".$peliculas[$i]['poster']."'></img><br> <br>";
-}
+}*/
+
+
+
+
+    class CatalogoCine
+    {
+        var $contenido;
+
+        function __construct()
+        {
+            $this->contenido = file_get_contents('https://tastedive.com/api/similar?type=movie&k=1061016-Alejandr-CC24F680&q=el&info=1');
+        }
+
+
+
+        function mostrar()
+        {
+            return json_decode($this->contenido, true);
+        }
+
+        function __destroy()
+        {
+
+        }
+
+
+    }
+
+
+
+    $catalogo_cine = new CatalogoCine();
+
+    echo '<pre>';
+    var_dump($catalogo_cine->mostrar());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
